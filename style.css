@@ -1,0 +1,221 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: url(images/buttrbut2.jpg) no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.container {
+  width: 400px;
+  height: 580px;
+  min-height: 400px;
+  padding: 30px;
+  background: transparent;
+  border: 5px solid #D63484;
+  border-radius: 10px;
+  backdrop-filter: blur(15px);
+}
+
+h1 {
+  color: #D63484;
+  text-align: center;
+  margin-bottom: 36px;
+}
+
+.input-container {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 25px;
+}
+
+.task-input {
+  flex: 1;
+  outline: none;
+  padding: 10px 10px 10px 20px;
+  background-color: transparent;
+  border: 2px solid rgb(251, 167, 181);
+  border-radius: 30px;
+  color: whitesmoke;
+  font-size: 16px;
+  margin-right: 10px;
+}
+
+.task-input::placeholder {
+  color: #534f52;
+}
+
+.add-button {
+  border: none;
+  outline: none;
+  background: #D63484;
+  color: #fff;
+  font-size: 35px;
+  cursor: pointer;
+  border-radius: 40px;
+  width: 40px;
+  height: 40px;
+}
+
+
+.empty-image {
+  position: fixed;
+  top: 69%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 350px;
+  width: 393px;;
+  
+}
+
+
+.task {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: white;
+  border-radius: 6px;
+  margin: 10px 0;
+  padding: 10px 12px;
+  border: 2px solid #D63484;
+  transition: all 0.2s ease;
+}
+
+
+.task:first-child {
+  margin-top: 0;
+}
+
+.task:last-child {
+  margin-bottom: 0;
+}
+
+.task:hover {
+  background-color: whitesmoke;
+}
+
+.task label {
+  cursor: pointer;
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  font-family: 'Roboto', sans-serif;
+  color: #534f52;
+}
+
+.task span {
+  padding-left: 20px;
+  position: relative;
+  cursor: pointer;
+}
+
+span::before {
+  content: "";
+  height: 20px;
+  width: 20px;
+  position: absolute;
+  margin-left: -30px;
+  border-radius: 100px;
+  border: 2px solid #e6b7eca1;
+}
+
+input[type='checkbox'] {
+  visibility: hidden;
+}
+
+input:checked + span {
+  text-decoration: line-through
+}
+
+.task:hover input:checked + span::before,
+input:checked + span::before {
+  background: url(./check.svg) 50% 50% no-repeat #f412bf;
+  border-color: #f412bf;
+}
+
+.task:hover span::before {
+  border-color: #eee;
+}
+
+.task .delete-btn {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  color: #eee;
+  font-size: 24px;
+}
+
+.tasks-container {
+  height: 300px;
+  overflow: overlay;
+}
+
+.tasks-container::-webkit-scrollbar-track {
+  background: rgb(247, 247, 247);
+  border-radius: 20px
+}
+
+.tasks-container::-webkit-scrollbar {
+  width: 0;
+}
+
+.tasks-container:hover::-webkit-scrollbar {
+  width: 7px;
+}
+
+.tasks-container::-webkit-scrollbar-thumb {
+  background: #d5d5d5;
+  border-radius: 20px;
+}
+
+.filters {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 25px;
+}
+
+.filter {
+  color: #534f52;
+  padding: 5px 15px;
+  border-radius: 100px;
+  border: 2px solid  rgb(251, 167, 181);
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+
+.filter:hover {
+  background-color: white;
+}
+
+.delete-all {
+  display: flex;
+  color: #534f52;;
+  padding: 7px 15px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: 2px solid rgb(251, 167, 181);;
+  border-radius: 100px;
+}
+
+.delete-all:hover {
+  
+  background-color: white;
+  color: #534f52;
+
+}
+
+
+
